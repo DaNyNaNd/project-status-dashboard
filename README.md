@@ -28,6 +28,8 @@ with a machine-readable schema in
 Useful commands:
 
 ```bash
+npm run agents:check
+npm run agents:sync
 npm run trackers:check
 npm run trackers:init
 npm run trackers:refresh
@@ -36,6 +38,16 @@ npm run trackers:refresh
 Generated trackers set `reviewed` to `false`. The dashboard labels them “Needs
 setup” until someone confirms the roadmap outcome, stage list, current stage,
 and project status.
+
+`agents:sync` creates or updates a marker-managed section in every repository's
+root `AGENTS.md`. Existing project-specific instructions are preserved. The
+managed section tells future agents when and how to maintain the tracker as
+roadmap work progresses.
+
+To turn each generated tracker into an evidence-backed project record, run the
+[per-project tracker review prompt](docs/PROJECT_TRACKER_REVIEW_PROMPT.md) once
+from a Codex task rooted in that repository. No additional setup script or
+dashboard registration is required.
 
 ## Verification
 

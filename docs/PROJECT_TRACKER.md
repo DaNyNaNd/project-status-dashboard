@@ -43,6 +43,11 @@ Run `npm run trackers:check` to count missing trackers. Run
 existing tracker. Review each generated file, replace the starter outcome and
 stage, then set `reviewed` to `true`.
 
+Run `npm run agents:check` to preview missing or stale root `AGENTS.md`
+instructions. Run `npm run agents:sync` to create or refresh the
+marker-managed tracker section across every repository. The synchronizer
+preserves all instructions outside its markers and is safe to rerun.
+
 GitHub issue and pull-request counts come from each repository's `origin` remote
 through the authenticated GitHub CLI. The optional milestone field is reserved
 for future project-detail views; the MVP shows repository-wide open counts.
