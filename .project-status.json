@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "name": "Project Status Dashboard",
+  "status": "in-progress",
+  "reviewed": true,
+  "roadmap": {
+    "outcome": "A local portfolio dashboard that joins standardized roadmap progress with live GitHub issue and pull-request counts.",
+    "currentStage": 1,
+    "stages": [
+      {
+        "id": "mvp-dashboard",
+        "title": "Single-page MVP"
+      },
+      {
+        "id": "project-details",
+        "title": "Project drill-down"
+      }
+    ]
+  }
+}
