@@ -49,6 +49,15 @@ To turn each generated tracker into an evidence-backed project record, run the
 from a Codex task rooted in that repository. No additional setup script or
 dashboard registration is required.
 
+## Excluding repositories
+
+The dashboard ignores the explicit relative paths in
+`EXCLUDED_REPOSITORY_PATHS` in `lib/project-status.mjs`. Use this only for a
+repository that should not be portfolio-tracked at all, such as a completed
+site with no current roadmap or a repository whose roadmap you do not own.
+Excluded repositories are also skipped by the tracker and `AGENTS.md` batch
+scripts. They do not need a placeholder tracker.
+
 ## Verification
 
 ```bash

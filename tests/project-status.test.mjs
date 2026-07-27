@@ -54,3 +54,18 @@ test("repository discovery finds nested repositories without descending into the
 
   assert.deepEqual(await discoverRepositories(root), [repository]);
 });
+
+test("repository discovery excludes configured portfolio paths", async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "project-status-"));
+  const excluded = path.join(root, "skills");
+  const included = path.join(root, "personal", "active-project");
+
+  await Promise.all(
+    [excluded, included].map(async (repository) => {
+      await mkdir(path.join(repository, ".git"), { recursive: true });
+      await writeFile(path.join(repository, ".git", "config"), "");
+    }),
+  );
+
+  assert.deepEqual(await discoverRepositories(root), [included]);
+});

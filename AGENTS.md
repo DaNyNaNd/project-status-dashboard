@@ -11,7 +11,7 @@ When implementing from a selected generated mock, treat that image as the source
 - Preserve the selected stage-track layout from `design-reference/gruvbox-roadmap-dashboard.png`.
 - Use the Gruvbox Dark Medium palette with `#282828` as the base surface.
 - Keep the MVP to one portfolio page. Individual project drill-down belongs to a future phase.
-- Every discovered Git repository remains visible. Missing or unreviewed tracker data must be labeled honestly instead of inferred.
+- Every discovered Git repository remains visible unless its relative path is explicitly listed in `EXCLUDED_REPOSITORY_PATHS` in `lib/project-status.mjs`. Use exclusions only for repositories that should not be portfolio-tracked at all; missing or unreviewed tracker data for included repositories must be labeled honestly instead of inferred.
 - The standardized repository tracker is `.project-status.json`.
 
 Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts/prepare-sites-build.mjs`, and `tests/sites-worker.test.mjs` intact so the same local prototype can be handed to Sites. Before a Sites handoff, run `npm run build` and `npm run test:sites`; the build must leave `dist/client/index.html`, `dist/server/index.js`, and `dist/.openai/hosting.json`.
